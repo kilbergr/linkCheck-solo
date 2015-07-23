@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  root 'websites#new'
+  get 'websites/new' => 'websites#new', as: "new_site"
+
+  get 'websites/:id' => 'websites#show', as: "show"
+  post 'websites' => 'websites#create'
+    
+#     Prefix Verb URI Pattern             Controller#Action
+#     root GET  /                       websites#new
+# new_site GET  /websites/new(.:format) websites#new
+#     show GET  /websites/:id(.:format) websites#show
+# websites POST /websites(.:format)     websites#create
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

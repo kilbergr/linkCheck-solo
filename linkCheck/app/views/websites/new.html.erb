@@ -1,0 +1,10 @@
+<h1>Submit website to check links</h1>
+<p>
+<%= form_for @website do |f| %>
+		<%= f.label "URL" %>
+		<%= f.text_field :url, autofocus: true %><br/>
+   
+    <%= f.submit "Check Links"%>
+<% end %>
+
+</p>

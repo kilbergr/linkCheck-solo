@@ -1,0 +1,5 @@
+<h1>Links on <%= @website.url %></h1>
+
+<% @website.links.each do |link| %>
+	<p><%= link.website_id %></p>
+<% end %>
