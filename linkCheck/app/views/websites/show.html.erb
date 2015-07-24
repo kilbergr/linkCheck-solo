@@ -1,5 +1,17 @@
 <h1>Links on <%= @website.url %></h1>
-
-<% @website.links.each do |link| %>
-	<p><%= link.website_id %></p>
-<% end %>
+<%= @website.links.length %>
+<% if @links %>
+<% @links.each do |link| %>
+      <tr>
+        <td><%= link_to link.url.truncate(50), link.url %></td>
+        <% if link.http_response >= 400 %>
+          <td style="color:red">
+        <% else %>
+          <td style="color:green">
+        <% end %>
+        <%= link.http_response %></td>
+      </tr>
+    <% end %>
+ <% else %>
+<p>	PROBLEMS</p>
+  <% end %>
