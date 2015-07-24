@@ -6,12 +6,12 @@ class WebsitesController < ApplicationController
   def create
     url = params.require(:website)[:url]
     website = Website.create(url: url)
-    if website.save
+    #if website.save
     LinksWorker.perform_async(website.id)
     redirect_to website_path(website)
-  	else 
-  		render :new
-  	end
+  	#else 
+  	#	render :new
+  	#end
   end
 
 

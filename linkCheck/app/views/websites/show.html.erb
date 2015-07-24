@@ -4,12 +4,12 @@
 <% @links.each do |link| %>
       <tr>
         <td><%= link_to link.url.truncate(50), link.url %></td>
-        <% if link.http_response >= 400 %>
+        <% if link.http_res >= 400 %>
           <td style="color:red">
         <% else %>
           <td style="color:green">
         <% end %>
-        <%= link.http_response %></td>
+        <%= link.http_res %></td>
       </tr>
     <% end %>
  <% else %>
